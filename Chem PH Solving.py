@@ -1,7 +1,16 @@
-#!/usr/bin/env python
-# coding: utf-8
+#    Copyright [2021] [Dylan Johnson]
 
-# In[45]:
+#    Licensed under the Apache License, Version 2.0 (the "License");
+#    you may not use this file except in compliance with the License.
+#    You may obtain a copy of the License at
+
+#        http://www.apache.org/licenses/LICENSE-2.0
+
+#    Unless required by applicable law or agreed to in writing, software
+#    distributed under the License is distributed on an "AS IS" BASIS,
+#    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#    See the License for the specific language governing permissions and
+#    limitations under the License.
 
 
 import matplotlib.pyplot as plt
@@ -234,11 +243,3 @@ def plot_titration(initial_vol=0, final_vol=100,increment=0.1,ratio=[1,1,1,1],C1
     print('Volume of Titrant Needed for Equivlance:',str(tit_vol_needed),'mL')
     print('Ammount of Titrant Needed for Equivlance:',str(tit_mol_needed),'mol')
     return x,y
-
-
-# In[53]:
-
-
-# y=plot_titration(initial_vol=25,final_vol=75)
-x,y=plot_titration(acid_or_base='acid',C1=0.1,V1=25,C2=0.1,V2=50,initial_vol=0,final_vol=50,strong_titrant=True, strong_analyte=True)
-
