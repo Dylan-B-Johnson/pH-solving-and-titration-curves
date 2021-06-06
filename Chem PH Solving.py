@@ -232,13 +232,12 @@ def plot_titration(initial_vol=0, final_vol=100, increment=0.1, ratio=[1, 1, 1, 
         added += increment
     plt.xlabel('Volume Added ' + '(' + unit + ')')
     plt.ylabel('pH')
-    plt.ylim(bottom=0, top=14)
+    plt.ylim(bottom=0, top=max(y))
     plt.plot(x, y)
     if acid_or_base == 'acid' and strong_titrant == True and strong_analyte == False:
         plt.title('Weak Acid-Strong Base Titration Curve')
     if acid_or_base == 'base' and strong_titrant == True and strong_analyte == False:
         plt.title('Weak Base-Strong Acid Titration Curve')
-    plt.show()
     tit_mol_needed = react(ratio=ratio, C1=C1, C2=C2, V1=V1, V2=V2, unit=unit)['titrant_mol_needed']
     tit_vol_needed = react(ratio=ratio, C1=C1, C2=C2, V1=V1, V2=V2, unit=unit)['titrant_vol_needed'] * 1000
     if not (strong_analyte) and strong_titrant:
@@ -247,11 +246,12 @@ def plot_titration(initial_vol=0, final_vol=100, increment=0.1, ratio=[1, 1, 1, 
         equ_pH = equivlance_pH(acid_or_base, k, salt_conc_at_eqvl)
     elif (strong_analyte and not (strong_titrant)) or (strong_analyte and strong_titrant):
         equ_pH = 7.0
-    print('Initial pH:' + str(y[0]))
+    print('Initial pH: ' + str(y[0]))
     print('pH at Equivlance Point: ' + str(equ_pH))
     print('Final pH:', str(y[len(y) - 1]))
     print('Volume of Titrant Needed for Equivlance:', str(tit_vol_needed), 'mL')
     print('Ammount of Titrant Needed for Equivlance:', str(tit_mol_needed), 'mol')
+    plt.show()
     return x, y
 
 
