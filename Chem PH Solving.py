@@ -215,8 +215,9 @@ def get_pH(rxn_mol, k=1.7e-5, acid_or_base='acid', strong_titrant=True, strong_a
 # weak-weak is not a good experimental design
 
 # final_vol is max amount added
-# if strong analyte - weak titrant, k is the k of the titrant
+# if strong analyte - weak titrant, k (dissociation constant) is the k of the titrant
 # k2 is only for weak-weak titrations, where it is the k of the titrant 
+# acid_or_base is for analyte ('acid' or 'base')
 def plot_titration(initial_vol=0, final_vol=100, increment=0.1, ratio=[1, 1, 1, 1], C1=5, C2=5, V1=50, V2=25, unit='mL',
                    strong_titrant=True, strong_analyte=False, k=1.7e-5, acid_or_base='acid', k2=1.8e-5):
     added = initial_vol
