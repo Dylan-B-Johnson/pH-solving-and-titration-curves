@@ -5,3 +5,4 @@ Generates approximate pH-titration curves, based on initial conditions.
 - react() solves Stoichiometric neutralizations.
 - All three functions have comments explaining their parameters. 
 - If you get weird squiggles, decreasing the increment may help, but it is an approximation and the areas where there is a transition between methods of calculation will result in larger errors.
+- This module uses the calculation method taught in IB-HL Chemistry and therefore may not be best method available.
